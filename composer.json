@@ -1,0 +1,22 @@
+{
+    "name": "203webgroup/example",
+    "description": "Example project",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "203 webgroup",
+            "email": "new.world@203webgroup.se"
+        }
+    ],
+    "require": {
+        "mockery/mockery": "0.8.0",
+        "jms/di-extra-bundle": "1.4.0",
+        "mnapoli/php-di": "3.3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.24"
+    },
+    "autoload": {
+        "psr-0": {"w203\\example": "src/" }
+    }
+}

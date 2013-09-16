@@ -5,7 +5,7 @@
    depends="prepare,lint,phpunit"/>
 
  <target name="build-parallel"
-   depends="prepare,lint,tools-parallel,phpunit,phpcb"/>
+   depends="prepare,composer,lint,tools-parallel,phpunit,phpcb"/>
 
  <target name="tools-parallel" description="Run tools in parallel">
   <parallel threadCount="2">
@@ -21,6 +21,7 @@
  </target>
 
  <target name="clean" description="Cleanup build artifacts">
+  <delete dir="${basedir}/vendor"/>
   <delete dir="${basedir}/build/api"/>
   <delete dir="${basedir}/build/code-browser"/>
   <delete dir="${basedir}/build/coverage"/>
@@ -35,6 +36,13 @@
   <mkdir dir="${basedir}/build/logs"/>
   <mkdir dir="${basedir}/build/pdepend"/>
   <mkdir dir="${basedir}/build/phpdox"/>
+ </target>
+
+ <target name="composer">
+     <exec executable="php">
+         <arg value="composer.phar"/>
+         <arg value="update"/>
+     </exec>
  </target>
 
  <target name="lint" description="Perform syntax check of sourcecode files">

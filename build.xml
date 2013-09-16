@@ -128,7 +128,8 @@
 
  <target name="phpunit" description="Run unit tests with PHPUnit">
   <exec executable="/usr/local/bin/phpunit" failonerror="true">
-    <arg value="--log-junit build/logs/junit.xml"/>
+    <arg value="--log-junit"/>
+    <arg value="build/logs/junit.xml"/>
   </exec>
  </target>
 

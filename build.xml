@@ -2,7 +2,7 @@
 
 <project name="name-of-project" default="build">
  <target name="build"
-   depends="prepare,lint,phpunit"/>
+   depends="prepare,composer,lint,phpunit"/>
 
  <target name="build-parallel"
    depends="prepare,composer,lint,tools-parallel,phpunit,phpcb"/>

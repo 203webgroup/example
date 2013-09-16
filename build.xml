@@ -127,7 +127,9 @@
  </target>
 
  <target name="phpunit" description="Run unit tests with PHPUnit">
-  <exec executable="/usr/local/bin/phpunit" failonerror="true"/>
+  <exec executable="/usr/local/bin/phpunit" failonerror="true">
+    <arg value="--log-junit build/logs/junit.xml"/>
+  </exec>
  </target>
 
  <target name="phpcb" description="Aggregate tool output with PHP_CodeBrowser">

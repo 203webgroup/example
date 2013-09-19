@@ -114,6 +114,7 @@
   </exec>
  </target>
 
+
  <target name="phpcpd" description="Find duplicate code using PHPCPD">
   <exec executable="phpcpd">
    <arg value="--log-pmd" />

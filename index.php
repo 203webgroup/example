@@ -22,3 +22,4 @@ $sum = $calculator->calcSum($a, $b);
     <?php echo $a . " + " . $b . " = " . $sum?>
     </body>
     </html>
+

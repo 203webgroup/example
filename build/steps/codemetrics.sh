@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Measure project size using PHPLOC
-phploc --log-csv ${WORKSPACE}/buid/logs/phploc.csv ${WORKSPACE}/src
+phploc --log-csv ${WORKSPACE}/build/logs/phploc.csv ${WORKSPACE}/src
 
 # Calculate software metrics using PHP_Depend
 # pdepend --jdepend-xml=build/logs/jdepend.xml --jdepend-chart=build/pdepend/dependencies.svg --overview-pyramid=build/pdepend/overview-pyramid.svg src

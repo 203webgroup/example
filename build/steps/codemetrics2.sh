@@ -4,4 +4,4 @@
 php composer.phar install
 
 # Sonar
-sonar-runner
+/home/debian/sonar-runner-2.3/bin/sonar-runner

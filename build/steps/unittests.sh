@@ -5,4 +5,4 @@ php -l src
 php -l tests
 
 # PHP unit
-phpunit --log-junit ../build/logs/junit.xml
+phpunit --log-junit build/logs/junit.xml

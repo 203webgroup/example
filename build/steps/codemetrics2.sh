@@ -7,4 +7,4 @@ php composer.phar install
 phpunit --log-junit build/logs/junit.xml
 
 # Sonar
-/home/debian/sonar-runner-2.3/bin/sonar-runner
+/home/debian/sonar-runner-2.3/bin/sonar-runner -Dsonar.projectVersion=${﻿BUILD_NUMBER} -Dsonar.phpUnit.analyzeOnly=true -Dsonar.phpUnit.reportPath=${WORKSPACE}/build/logs/junit.xml

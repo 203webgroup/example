@@ -26,4 +26,17 @@ class TextUtilTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals("Korv, 10 kr", $actual);
     }
 
+    /**
+     * @test
+     */
+    public function shouldFormatPricesOver1000WithKSek() {
+        // Fixture
+
+        // Test
+        $actual = $this->target->formatProductAndPrice("Bil", 123456);
+
+        // Assert
+        $this->assertEquals("Bil, 123 tusen pix", $actual);
+    }
+
 }

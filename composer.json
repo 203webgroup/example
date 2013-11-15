@@ -9,11 +9,13 @@
         }
     ],
     "require": {
-        "mockery/mockery": "0.8.0",
         "jms/di-extra-bundle": "1.4.0",
         "mnapoli/php-di": "3.3.0"
     },
     "require-dev": {
+        "mockery/mockery": "0.8.0",
+        "balihoo/phockito-unit": "dev-master",
+        "hafriedlander/phockito": "dev-master",
         "phpunit/phpunit": "3.7.24",
         "pdepend/pdepend" : "1.1.1",
         "phpmd/phpmd" : "1.4.*"

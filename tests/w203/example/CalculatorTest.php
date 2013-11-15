@@ -1,11 +1,11 @@
 <?php
 
-use Mockery as M;
 use w203\example\Calculator;
+use w203\example\Worker;
 
-class CalculatorTest extends PHPUnit_Framework_TestCase {
+class CalculatorTest extends \PhockitoUnit\PhockitoUnitTestCase {
     /**
-     * @var null|Mockery\MockInterface
+     * @var Worker
      */
     private $mockWorker = null;
 
@@ -15,7 +15,7 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
     private $target;
 
     public function setUp() {
-        $this->mockWorker = M::mock('w203\example\Worker');
+        parent::setUp();
 
         $this->target = new Calculator($this->mockWorker);
     }
@@ -29,7 +29,7 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
         $b = 243;
         $expected = 4711;
 
-        $this->mockWorker->shouldReceive('add')->with($a, $b)->andReturn($expected);
+        Phockito::when($this->mockWorker->add($a, $b))->return($expected);
 
         // Test
         $actual = $this->target->calcSum($a, $b);

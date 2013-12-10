@@ -15,6 +15,11 @@ class User
 
     public function usingDemo($a)
     {
-        return $this->demo->calculate($a, $a + 5);
+        $x = $a;
+        $y = $a + 5;
+
+        $result = $this->demo->calculate($x, $y);
+
+        return $result;
     }
 }

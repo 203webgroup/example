@@ -6,6 +6,7 @@ shouldReturnYifXLessThan10();
 shouldReturnXifXIs10AndYLessThan10();
 shouldReturnXPlusYifXIsGreaterThan10AndYisGreaterThan9();
 shouldReturn17ifXIs10YisGreaterThan9();
+echo ("Success!");
 
 function shouldReturnYifXLessThan10()
 {

@@ -4,6 +4,7 @@ namespace w203\example\unittestdemo\v5;
 
 use Phockito;
 use PHPUnit_Framework_TestCase;
+use w203\example\unittestdemo\v4\User;
 
 class DemoTest extends PHPUnit_Framework_TestCase
 {
@@ -15,7 +16,7 @@ class DemoTest extends PHPUnit_Framework_TestCase
     private $demoMock;
 
     public function setUp() {
-        $this->demoMock = Phockito::mock('\w203\example\unittestdemo\v5\Demo');
+        $this->demoMock = Phockito::mock('\w203\example\unittestdemo\v4\Demo');
         $this->target = new User($this->demoMock);
     }
 

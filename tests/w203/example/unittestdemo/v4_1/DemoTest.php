@@ -1,8 +1,9 @@
 <?php
 
-namespace w203\example\unittestdemo\v4;
+namespace w203\example\unittestdemo\v4_1;
 
 use PHPUnit_Framework_TestCase;
+use w203\example\unittestdemo\v4\Demo;
 
 class DemoTest extends PHPUnit_Framework_TestCase
 {

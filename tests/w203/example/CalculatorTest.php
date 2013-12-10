@@ -1,9 +1,10 @@
 <?php
 
+use PhockitoUnit\PhockitoUnitTestCase;
 use w203\example\Calculator;
 use w203\example\Worker;
 
-class CalculatorTest extends \PhockitoUnit\PhockitoUnitTestCase {
+class CalculatorTest extends PhockitoUnitTestCase {
     /**
      * @var Worker
      */

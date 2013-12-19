@@ -1,12 +1,12 @@
 <?php
 
-namespace w203\example\unittestdemo\v5;
+namespace w203\example\unittestdemo\v4_2;
 
 use Phockito;
 use PHPUnit_Framework_TestCase;
 use w203\example\unittestdemo\v4\User;
 
-class DemoTest extends PHPUnit_Framework_TestCase
+class UserTest extends PHPUnit_Framework_TestCase
 {
     private $target;
 

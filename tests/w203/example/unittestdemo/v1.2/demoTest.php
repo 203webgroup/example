@@ -1,8 +1,8 @@
 <?php
 
-require_once("../../../../../src/w203/example/unittestdemo/v1/Demo.php");
+require_once(__DIR__ . "/../../../../../src/w203/example/unittestdemo/v1/Demo.php");
 
-class WorkerTest extends PHPUnit_Framework_TestCase
+class DemoTest extends PHPUnit_Framework_TestCase
 {
 
     /**

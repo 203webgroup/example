@@ -1,6 +1,6 @@
 <?php
 
-namespace w203\example\unittestdemo\v4_2;
+namespace w203\example\unittestdemo\v4_1;
 
 use Exception;
 use PHPUnit_Framework_TestCase;

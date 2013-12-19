@@ -1,6 +1,6 @@
 <?php
 
-require_once("../../../../../src/w203/example/unittestdemo/v1/Demo.php");
+require_once(__DIR__ . "/../../../../../src/w203/example/unittestdemo/v1/Demo.php");
 
 shouldReturnYifXLessThan10();
 shouldReturnXifXIs10AndYLessThan10();

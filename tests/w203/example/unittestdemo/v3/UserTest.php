@@ -4,7 +4,7 @@ namespace w203\example\unittestdemo\v3;
 
 use PHPUnit_Framework_TestCase;
 
-class DemoTest extends PHPUnit_Framework_TestCase
+class UserTest extends PHPUnit_Framework_TestCase
 {
     private $target;
 

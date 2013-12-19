@@ -27,9 +27,7 @@ class DemoTest extends PHPUnit_Framework_TestCase
         $actual = $this->target->calculate($x, $y);
 
         // Assert
-        if ($expected != $actual) {
-            throw new Exception("Assert failed: actual=" . $actual);
-        }
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -46,9 +44,7 @@ class DemoTest extends PHPUnit_Framework_TestCase
         $actual = $this->target->calculate($x, $y);
 
         // Assert
-        if ($expected != $actual) {
-            throw new Exception("Assert failed: actual=" . $actual);
-        }
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -65,9 +61,7 @@ class DemoTest extends PHPUnit_Framework_TestCase
         $actual = $this->target->calculate($x, $y);
 
         // Assert
-        if ($expected != $actual) {
-            throw new Exception("Assert failed: actual=" . $actual);
-        }
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -84,8 +78,6 @@ class DemoTest extends PHPUnit_Framework_TestCase
         $actual = $this->target->calculate($x, $y);
 
         // Assert
-        if ($expected != $actual) {
-            throw new Exception("Assert failed: actual=" . $actual);
-        }
+        $this->assertEquals($expected, $actual);
     }
 }

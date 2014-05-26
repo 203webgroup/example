@@ -1,0 +1,42 @@
+Test with mocks
+---------------
+
+There are many ways to test code/systems, this example describes how to do it with mocks.
+
+When we want to test a piece of code, it may be a class or a full system, we will usually find that there are
+dependencies to other code or systems. This means that when we call some functionality in the code we want to test, it
+will call functionality in some other code it depends on. The problem with this is that if there is a bug in the code
+that our test subject depends on, it may break the test for our test subject. To make tests possible to maintain we want
+to minimize dependencies between tests so that if there is a bug in some code, only the test for that code should fail.
+
+The basic thinking is that a class or system has a contract (or API) that
+defines its expected behaviour. Other code or systems that use that part (that has a dependency to that code) expects
+that the part behaves as described by the contract. This contract is in most cases implicit and not documented in text,
+but if we have good test coverage it is probably described through tests instead.
+Suppose we have class A that uses functionality in class B. If we have a contract that describes the behaviour of class
+B, we only have to verify that class A uses class B according to that contract. When testing A we assume that B is doing
+what it should, and in the tests for A we only verify A. If there is a bug in B it should be found in the tests for B,
+which only tests B. This is called test isolation.
+To enable test isolation, we would like to make sure that A uses a "B" that is flawless when testing A. This
+is what we use mocks for. A mock is a piece of code that looks like the code that our target depends on (B in the
+example) but where we have full control of the behaviour. A mock impersonates the code that the subject under test
+depends on.
+
+The mock framework we use (Phockito) uses "nice mocks". A nice mock by default implements all method of the class that
+is mocked. The methods do nothing, but they exist abd can be called without errors. All methods return null by default.
+To be able to do any real testing, we have to tell the mock how to behave. Typically this is done by telling it to
+return some specific value when calling a method with some specific argument. This mode of usage is sufficient in most
+cases, as long as the code we want to test calls a method that returns a value that is further enhanced by our test
+subject and then returned. In other cases this is not enough, especially where the code we test only wants
+to trigger side effects in the class it depends on and is not interested in the returned value. In this case we have
+to ask the mock if it has been called with the parameters we expect it to be called with. Mock frameworks typically
+supports this by recording all calls to methods in the mock.
+
+Another important property to enable test isolation, is that we must make sure that our test subject uses our mock when
+tested but "the real thing" in production. The solution to this problem is called Dependency Injection in unit testing
+and configuration in the case of testing a full system. The simplest way to implement dependency injection in a class
+is to pass instances of all its dependencies as arguments in the constructor (called constructor injection). The
+injected instances are stored in the class as members to be used later when methods are called.
+
+This test methodology can be applied on any level such as a single class (unit testing) or a full system where other
+systems are mocked.

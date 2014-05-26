@@ -51,36 +51,28 @@ class BTest extends \PHPUnit_Framework_TestCase {
     /**
      * @test
      */
-    public function shouldCalculateLengthOfAStringPlus10()
+    public function shouldAddMagicNumber()
     {
         // Fixture
-        $string = 'Hello';
-        $expected = 15;
+        $expected = 10 + 123123;
 
         // Test
-        $actual = $this->target->funcReturningANumber($string);
+        $actual = $this->target->funcReturningANumber(10);
 
         // Assert
         $this->assertEquals($expected, $actual);
     }
 
     /**
-     * Test all important scenarios. In this case we assume that there is a risk that the parameter is null.
-     *
-     * Use annotation to tell phpunit that the code should throw an exception. Also add a fail at the end to make sure
-     * the test fails if you miss to add the annotation
-     */
-
-    /**
      * @test
      * @expectedException \Exception
      */
-    public function shouldThrowExceptionForNullInput()
+    public function shouldThrowExceptionFor0()
     {
         // Fixture
 
         // Test
-        $this->target->funcReturningANumber(null);
+        $this->target->funcReturningANumber(0);
 
         // Assert
         $this->fail("Should throw exception");

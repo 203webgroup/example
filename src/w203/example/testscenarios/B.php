@@ -24,17 +24,12 @@ class B
 
     public function funcReturningANumber($parameter)
     {
-        // Some sort of logic doing something
-        if (is_string($parameter)) {
-            return strlen($parameter) + 10;
+        if (0 === $parameter) {
+            throw new \Exception("Must not be 0");
         }
 
-        throw new \Exception("Not a string");
-    }
-
-    public function funcNotReturningAnything($parameter)
-    {
-        // Do stuff but do not return anything
+        // Some sort of logic doing something
+        return $parameter + 123123;
     }
 }
  

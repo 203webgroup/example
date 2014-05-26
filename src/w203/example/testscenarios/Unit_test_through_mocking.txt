@@ -1,0 +1,38 @@
+Unit tests with mocks
+---------------------
+
+Test pattern 1:
+Suppose we want to test class A that uses functionality in class B. The code in class B returns a value that is used by
+See example code for class A and B
+A to return its result.
+1. Create a mock for B
+2. Set up the behaviour in the mock, the expected return value.
+3. Create an instance of class A and inject the B-mock in the constructor
+4. Call the function to test in A
+5. Verify that A returns the correct value based on the value returned by B
+
+Notes:
+a. We verify that functionality of the logic that calculates the argument to funcReturningANumber by setting up the
+   behaviour on the mock. If there is a bug when calculating the argument, the mock will be called with some other
+   argument and the mock will return null instead of the expected value.
+b. The value returned from the mock ($returnValueFromB) does not have to be realistic in relation to the argument
+   ($argToMethodInB). In fact it is better to not use a realistic return value since it exposes code that makes
+   assumptions.
+c. We verify that the expected function in B really was called, by using its return value when verifying the result of
+   the method under test.
+d. The functionality of the logic that calculate the result is verified by verifying the actual result with the
+   expected result, calculated from the value returned by the mock.
+e. B is tested in isolation. If there is a bug in B it will not break the A test and vice versa.
+
+
+Test pattern 2:
+Suppose we want to test class C that uses functionality in class D. The code in class D does not return anything.
+1. Create a mock for D
+2. Create an instance of class D and inject the D-mock in the constructor
+3. Call the function to test in C
+4. Verify that the expected method was called on the D-mock
+
+Notes:
+a. The logic that calculates the argument for otherFunction() is tested by verifying that the mock was called with the
+   expected argument.
+b. The same verification also tests that the function in D really was called.

@@ -12,7 +12,7 @@ namespace w203\example\testscenarios;
  * functionality of all public methods except getters and setters.
  */
 class BTest extends \PHPUnit_Framework_TestCase {
-    // The class that the test is testing. In some projects this member is called sut.
+    // The class that the test is testing. In some projects this member is called target.
     /** @var B */
     private $target;
 

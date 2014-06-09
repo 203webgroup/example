@@ -8,14 +8,14 @@ use Phockito as P;
 class CTest extends \PHPUnit_Framework_TestCase {
 
     /** @var C */
-    private $sut;
+    private $target;
 
     private $dMock;
 
     public function setUp()
     {
         $this->dMock = P::mock(D::class);
-        $this->sut = new C($this->dMock);
+        $this->target = new C($this->dMock);
     }
 
     /**
@@ -28,10 +28,10 @@ class CTest extends \PHPUnit_Framework_TestCase {
         $argumentForOtherFunction = $argument + 10;
 
         // Test
-        $this->sut->someFunction($argument);
+        $this->target->someFunction($argument);
 
         // Assert
-        P::verify($this->dMock)->otherFunction($argumentForOtherFunction);
+        P::verify($this->dMock, 1)->otherFunction($argumentForOtherFunction);
     }
 }
  

@@ -8,15 +8,19 @@
             "email": "new.world@203webgroup.se"
         }
     ],
+    "repositories": [
+        {
+            "url": "git@github.com:203webgroup/phockito.git",
+            "type": "git"
+        }
+    ],
     "require": {
         "jms/di-extra-bundle": "1.4.0",
         "mnapoli/php-di": "3.3.0"
     },
     "require-dev": {
-        "mockery/mockery": "0.8.0",
-        "balihoo/phockito-unit": "dev-master",
-        "hafriedlander/phockito": "dev-master",
-        "phpunit/phpunit": "3.7.24",
+        "tnt/phockito": "1.2.0",
+        "phpunit/phpunit": "4.*",
         "pdepend/pdepend" : "1.1.1",
         "phpmd/phpmd" : "1.4.*"
     },

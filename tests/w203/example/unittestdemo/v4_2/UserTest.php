@@ -28,7 +28,7 @@ class UserTest extends PHPUnit_Framework_TestCase
         // Fixture
         $a = 9;
         $expected = 6;
-        Phockito::when($this->demoMock->calculate($a, $a + 5))->return($expected);
+        Phockito::when($this->demoMock)->calculate($a, $a + 5)->return($expected);
 
         // Test
         $actual = $this->target->usingDemo($a);

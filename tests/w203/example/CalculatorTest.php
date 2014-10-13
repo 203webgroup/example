@@ -1,10 +1,11 @@
 <?php
 
-use PhockitoUnit\PhockitoUnitTestCase;
 use w203\example\Calculator;
 use w203\example\Worker;
 
-class CalculatorTest extends PhockitoUnitTestCase {
+use Phockito as P;
+
+class CalculatorTest extends PHPUnit_Framework_TestCase {
     /**
      * @var Worker
      */
@@ -18,6 +19,7 @@ class CalculatorTest extends PhockitoUnitTestCase {
     public function setUp() {
         parent::setUp();
 
+        $this->mockWorker = P::mock(Worker::class);
         $this->target = new Calculator($this->mockWorker);
     }
 
@@ -30,7 +32,7 @@ class CalculatorTest extends PhockitoUnitTestCase {
         $b = 243;
         $expected = 4711;
 
-        Phockito::when($this->mockWorker->add($a, $b))->return($expected);
+        Phockito::when($this->mockWorker)->add($a, $b)->return($expected);
 
         // Test
         $actual = $this->target->calcSum($a, $b);

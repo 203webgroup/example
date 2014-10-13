@@ -1,7 +1,8 @@
 <?php
 
-use Mockery as M;
+use w203\example\decoupling\Formatter;
 use w203\example\decoupling\PriceCalculator;
+use Phockito as P;
 
 class PriceCalculatorTest extends PHPUnit_Framework_TestCase {
 
@@ -10,14 +11,11 @@ class PriceCalculatorTest extends PHPUnit_Framework_TestCase {
      */
     private $target = null;
 
-    /**
-     * @var null|Mockery\MockInterface
-     */
     private $mockFormatter = null;
 
 
     public function setUp() {
-        $this->mockFormatter = M::mock('w203\example\decoupling\Formatter');
+        $this->mockFormatter = P::mock(Formatter::class);
 
         $this->target = new PriceCalculator($this->mockFormatter);
     }
@@ -30,7 +28,7 @@ class PriceCalculatorTest extends PHPUnit_Framework_TestCase {
         // Fixture
         $prices = [1, 2, 3];
         $expected = "some string";
-        $this->mockFormatter->shouldReceive('formatPrice')->with(6)->andReturn($expected);
+        P::when($this->mockFormatter)->formatPrice(6)->return($expected);
 
         // Test
         $actual = $this->target->sumPrices($prices);

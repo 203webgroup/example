@@ -1,7 +1,7 @@
 <?php
 
 
-require_once("../../../../src/w203/example/decoupling/untestable.php");
+require_once(__DIR__ . '/../../../../src/w203/example/decoupling/untestable.php');
 
 class untestableTest extends PHPUnit_Framework_TestCase
 {
